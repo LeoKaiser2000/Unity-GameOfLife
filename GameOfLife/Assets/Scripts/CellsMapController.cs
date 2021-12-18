@@ -41,7 +41,7 @@ public class CellsMapController : MonoBehaviour
     [SerializeField] private int MaxHeight;
     [SerializeField] private int MinWidth;
     [SerializeField] private int MinHeight;
-    [SerializeField] private int AlphaMaxForPixel;
+    [SerializeField] private int AlphaMinForPixel;
     [SerializeField] private int BlackMinForPixel;
 
 
@@ -80,7 +80,8 @@ public class CellsMapController : MonoBehaviour
     {
         switch (cell.neighbourCounter)
         {
-            case 0 or 1:
+            case 0:
+            case 1:
                 if (cell.data.IsAlive)
                     CellSetChanges(cell, _colorMode,false);
                 break;
@@ -163,6 +164,9 @@ public class CellsMapController : MonoBehaviour
         _cells = temporaryTab;
         _height = newHeight;
         _width = newWidth;
+        HeightInputField.text = _height.ToString();
+        WidthInputField.text = _width.ToString();
+
         GameCamera.transform.position = new Vector3(
             newWidth * CellScale.x / 2,
             newHeight * CellScale.y / 2,
@@ -502,7 +506,7 @@ public class CellsMapController : MonoBehaviour
             for (int X = 0; X < _width; ++X)
             {
                 var pixelColors = image.imageData[Y * _width + X];
-                var pixelStatus =  pixelColors.a <= AlphaMaxForPixel && (pixelColors.r >= BlackMinForPixel || pixelColors.g >= BlackMinForPixel && pixelColors.b >= BlackMinForPixel);
+                var pixelStatus =  pixelColors.a >= AlphaMinForPixel && (pixelColors.r >= BlackMinForPixel || pixelColors.g >= BlackMinForPixel && pixelColors.b >= BlackMinForPixel);
                 var cell = _cells[Y, X];
                 if (pixelStatus != cell.data.IsAlive)
                 {
