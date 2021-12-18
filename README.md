@@ -83,9 +83,17 @@ The Rainbow color mode select new cell color based on average of same color (if 
 
 ## <a name='remarks'>Remarks</a>
 
-The maximum grid size is 300x300.
+### Grid size
+
+The minimum grid size is 4x4.
+
+The maximum grid size is 300x300
+
+### Bitmap dead cells color
 
 For bitmap loading, a pixel is alive if is apha color is less than 100 and if one or more of the red, green or blue colors are highter than 5 (transparent or black pixels are dead).
+
+### Bitmap library
 
 As I made the project on a Linux, Bitmap C# library was not provided. To avoid the problem I used a Unity Script (BMPLoader.cs) That I did not made myself.
 
