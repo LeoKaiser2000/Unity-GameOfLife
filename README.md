@@ -20,11 +20,12 @@ Game of life project for school
 
 
 ## <a name='requirements'>Requirements</a>
-Unity version 2021.2.7f1
 
-C# version 9.0
+Unity version 2020.3.19f1
 
-*Note: This is the version that I used at default, it may run on lower one*
+C# version 8.0
+
+*Note: This is the version used in school computers, it may run on lower one*
 
 ## <a name='quickstart'>Quickstart</a>
 
@@ -34,8 +35,6 @@ command:
 $ git clone "https://github.com/LeoKaiser2000/Unity-GameOfLife.git"
 ```
 Clone the project, open unity, add project, and open it.
-
-*Note: As I made it on a Linux platform, you may have a pannel that ask to add windows unity files. Clic on accept button*
 
 ## <a name='projectOverview'>Project overview</a>
 
